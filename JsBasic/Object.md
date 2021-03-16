@@ -16,9 +16,16 @@
 ```
     let user = {
         name: "john",
-        age: 30
+        age: 30,
+        "likers birds" : true // 복수의 단어에는 따옴표
     };
 
+    // 출력
     console.log(user.name);
     console.log(user.age);
+    console.log(user["likes birds"]);
+    // 복수 단어는 .~~ 를 통해 얻을 수 없다.
+    
+    // 삭제
+    delete user.age;
 ```
