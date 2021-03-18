@@ -33,7 +33,6 @@ const input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
     imp = [];
     cnt = 0;
 
-    // 입력 처리
     tmp = input[i].split(" ");
     N = Number(tmp[0]);
     M = Number(tmp[1]);
@@ -43,7 +42,6 @@ const input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
       imp[j] = Number(importance[j]);
     }
 
-    // N개의 문서와 중요도를 큐에 삽입
     for (let a = 0; a < N; a++) {
       q.enqueue([a, imp[a]]);
     }
@@ -54,30 +52,26 @@ const input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
       maxList = [];
       tmpList = [];
 
-      // 중요도 최댓값 구하기
       for (let b = 0; b < q.store.length; b++) {
         maxList = q.store[b];
         if (max < maxList[1]) {
           max = maxList[1];
         }
       }
-      // 비교하기
+
       while (1) {
         tmpList = q.front();
         if (tmpList[1] == max) {
-          // 현재 문서의 중요도가 가장 높으면
-          cnt++; // cnt 1 증가 시키고
-          q.dequeue(); // dequeue
+          cnt++;
+          q.dequeue();
           if (tmpList[0] == M) {
-            // 현재 문서의 번호가 M이면
-            console.log(cnt); // cnt 출력하고
-            loop = false; // 루프 종료
+            console.log(cnt);
+            loop = false;
           }
           break;
         } else {
-          // 그렇지 않으면
-          q.dequeue(); // 큐에서 삭제
-          q.enqueue(tmpList); // 큐의 가장 뒤에 재배치
+          q.dequeue();
+          q.enqueue(tmpList);
         }
       }
     }
