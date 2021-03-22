@@ -1,3 +1,13 @@
+const lines = readInputLines();
+const [N, M, V] = splitAndParseInt(lines[0]);
+let visited = new Array(N + 1).fill(false);
+const map = Array.from(new Array(N + 1), () => new Array(N + 1).fill(0));
+
+for (let i = 1; i <= M; ++i) {
+  const [v1, v2] = splitAndParseInt(lines[i]);
+  setConnection(map, v1, v2);
+}
+
 function readInputLines() {
   return require("fs").readFileSync("/dev/stdin").toString().trim().split("\n");
 }
@@ -6,37 +16,41 @@ function splitAndParseInt(string) {
   return string.split(" ").map((value) => parseInt(value));
 }
 
-function initialConnection(matrix, n, m) {
-  // 인접 행렬을 위한 초기화 작업을 수행ㅂ
-  for (let i = 0; i < n; i++) {
-    for (let j = 0; j < m; j++) {
-      matrix[i][j] = 0;
+function setConnection(map, v1, v2) {
+  map[v1][v2] = 1;
+  map[v2][v1] = 1;
+}
+
+let dfsOut = "" + V;
+function DFS(V) {
+  visited[V] = true;
+  for (let i = 1; i <= N; i++) {
+    if (map[V][i] === 1 && !visited[i]) {
+      dfsOut += " " + i;
+      DFS(i);
     }
   }
 }
 
-function setConnection(matrix, n, m) {
-  matrix[n][m] = 1;
-  matrix[m][n] = 1;
+let bfsOut = "" + V;
+function BFS(V) {
+  visited[V] = true;
+  const queue = [V];
+  while (queue.length !== 0) {
+    const nextV = queue.shift();
+    for (let i = 1; i <= N; i++) {
+      if (map[nextV][i] === 1 && !visited[i]) {
+        visited[i] = true;
+        bfsOut += " " + i;
+        queue.push(i);
+      }
+    }
+  }
 }
 
-function dfs(v) {
-  console.log(v);
-  visit
-}
+DFS(V);
+visited = visited.fill(false);
+BFS(V);
 
-function bfs(v) {}
-
-let matrix = [];
-const lines = readInputLines();
-// n,m,v 입력 받기
-const [n, m, v] = splitAndParseInt(lines[0]);
-// 0으로 초기화
-initialConnection(matrix, start, end);
-// 인접행렬 방문 처리
-for (let i = 0; i < m; i++) {
-  let [x, y] = splitAndParseInt(lines[i]);
-  setConnection(x, y);
-}
-
-dfs(v);
+console.log(dfsOut);
+console.log(bfsOut);
