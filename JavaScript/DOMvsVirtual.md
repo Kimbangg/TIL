@@ -20,11 +20,12 @@ Document Object Model 인 DOM은 말 그대로 Document(=html) 를 JavaScript가
 
 DOM은 Document 파일을 아래의 그림처럼 Tree 형태로 나누어 렌더링을 합니다 :)
 
-[##_Image|kage@Bsnzb/btq0Jyjb3N9/Eaef0nVgWtWtNNKkyhtU6K/img.png|alignCenter|data-origin-width="1372" data-origin-height="748" data-filename="스크린샷 2021-03-23 오후 1.45.54.png" data-ke-mobilestyle="widthContent"|||_##]
+[##_I<img width="899" alt="스크린샷 2021-03-23 오후 2 21 02" src="https://user-images.githubusercontent.com/49136186/112097355-32bcc080-8be3-11eb-8eac-976dd7363579.png">
+
 
 ### **DOM 렌더링 과정**
 
-[##_Image|kage@cZFQ6B/btq0Smamb3T/PaVT5A3gNiaf51vOlhVN1K/img.png|alignCenter|data-filename="스크린샷 2021-03-23 오후 2.06.45.png" data-origin-width="1498" data-origin-height="654" data-ke-mobilestyle="widthContent"|||_##]
+[##_I<img width="894" alt="스크린샷 2021-03-23 오후 2 21 08" src="https://user-images.githubusercontent.com/49136186/112097366-36e8de00-8be3-11eb-85d9-977af7e72a04.png">
 
 1\. DOM 트리를 구성
 
