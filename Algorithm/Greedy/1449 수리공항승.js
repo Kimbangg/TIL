@@ -16,8 +16,10 @@ function solution(N, L, line) {
 
 const fs = require("fs");
 const input = fs.readFileSync("dev/stdin").toString().trim().split("\n");
+
 // 파이프 개수 및 테이프의 길이를 입력 받는다.
 const [N, L] = input[0].split(" ").map((e) => +e);
+
 // 파이프의 위치를 입력 받고, 오름차순으로 정렬한다.
 const pipe = input[1]
   .split(" ")
