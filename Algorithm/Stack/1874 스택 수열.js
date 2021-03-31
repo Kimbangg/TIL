@@ -1,17 +1,17 @@
 let input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
-const N = Number(input[0]);
+const n = Number(input[0]);
 const stack = [];
 let message = "";
-let counter = 1;
+let index = 1;
 
-for (let i = 1; i <= N; i++) {
-  let n = Number(input[i]);
+for (let i = 1; i <= n; i++) {
+  let tmp = Number(input[i]);
 
-  while (counter <= n) {
-    stack.push(counter++);
+  while (index <= tmp) {
+    stack.push(index++);
     message += "+\n";
   }
-  if (stack[stack.length - 1] === n) {
+  if (stack[stack.length - 1] === tmp) {
     message += "-\n";
     stack.pop();
   } else {

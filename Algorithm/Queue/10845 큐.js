@@ -20,7 +20,6 @@ class Queue {
 
   pop() {
     if (this.forward === this.rear) return -1;
-
     return this.arr[this.forward++];
   }
 

@@ -10,7 +10,7 @@ class Stack {
     this.size = 0;
   }
   isEmpty() {
-    this.head === null ? 1 : 0;
+    return this.head === null ? 1 : 0;
   }
   push(data) {
     let node = new Node(data);
@@ -19,19 +19,15 @@ class Stack {
     this.size++;
   }
   pop() {
-    if (this.isEmpty) {
-      return -1;
-    }
+    if (this.isEmpty()) return -1;
     let node = this.head;
     this.head = node.next;
     this.size--;
     return node.data;
   }
-
   getSize() {
     return this.size;
   }
-
   top() {
     return this.isEmpty() ? -1 : this.head.data;
   }
