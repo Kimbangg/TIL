@@ -4,7 +4,7 @@ const input = require("fs")
   .trim()
   .split("\n");
 const N = parseInt(input[0]);
-let result = "";
+let result = "";``
 
 class Queue {
   constructor(N) {
