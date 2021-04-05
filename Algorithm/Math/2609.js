@@ -13,7 +13,5 @@ function solution() {
 }
 
 const input = require("fs").readFileSync("/dev/stdin", "utf8").trim();
-
 const [A, B] = input.split(" ").map((c) => +c);
-
 solution();
