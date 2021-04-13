@@ -17,3 +17,5 @@ function solution(progresses, speeds) {
 
   return answer;
 }
+
+// days 라는 별도의 배열을 만들어서 해결 했지만, 실질적으로 큐를 활용한 느낌이 거의 없다.
