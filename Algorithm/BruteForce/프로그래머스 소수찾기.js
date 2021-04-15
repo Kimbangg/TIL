@@ -1,8 +1,24 @@
-let cur = "";
-let numbers = ["1", "7"];
+function solution(numbers) {
+  let answer = 0;
+  numbers = numbers.split("");
+  let numCheck = new Set();
+  makeNumber("", numbers);
 
+  function isPrimeNumber(n) {
+    if (n < 2) {
+      return false;
+    }
 
-function makeNumber(cur, numbers) {
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i === 0) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  function makeNumber(cur, numbers) {
     if (cur.length > 0) {
       if (!numCheck.has(Number(cur))) {
         numCheck.add(Number(cur));
@@ -19,4 +35,6 @@ function makeNumber(cur, numbers) {
       makeNumber(cur + numbers[i], tmpArr);
     }
   }
+
+  return answer;
 }
