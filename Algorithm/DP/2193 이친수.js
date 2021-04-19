@@ -6,4 +6,4 @@ for (let i = 3; i <= parseInt(input); i++) {
   dp[i] = dp[i - 1] + dp[i - 2];
 }
 
-console.log(dp[parseInt(input)].toString()dp
+console.log(dp[parseInt(input)].toString());
