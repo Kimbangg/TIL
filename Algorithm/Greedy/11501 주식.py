@@ -6,7 +6,7 @@ for _ in range(T):
     answer = 0 
     maxStock = stock[-1]
     for i in range(n-2,-1,-1):
-        if stock[i] > mx: 
+        if stock[i] > maxStock: 
             maxStock = stock[i]
         else:
             answer += maxStock-stock[i]
