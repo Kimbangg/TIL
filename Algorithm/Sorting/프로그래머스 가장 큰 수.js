@@ -9,6 +9,7 @@ function solution(numbers) {
   });
 
   console.log(answer);
+
   if (answer[0] === "0") {
     return 0;
   }
