@@ -12,6 +12,8 @@ function checkEqual() {
       if (A[i][j] !== B[i][j]) {
         return 0;
       }
+      const fs = require("fs");
+      const input = fs.readFileSync("dev/stdin").toString().trim().split("\n");
     }
   }
   return 1;
