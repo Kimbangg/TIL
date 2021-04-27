@@ -1,6 +1,7 @@
 function solution(people, limit) {
   let answer = 0;
   people.sort((a, b) => b - a);
+
   for (let i = 0, j = people.length - 1; i <= j; i++) {
     // 가장 가벼운 사람과 무거운 사람을 동시에 태워서
     //  만약 둘이 탈 수 있으면 무거운 사람 + 가벼운 사람 승차
