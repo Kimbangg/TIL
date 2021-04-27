@@ -1,8 +1,8 @@
 function solution(priorities, location) {
-  var answer = 0;
-  var target_index = location;
+  let answer = 0;
+  let target_index = location;
 
-  while (priorities.length > 0) {
+  while (priorities.length) {
     if (priorities.some((num) => num > priorities[0])) {
       priorities.push(priorities[0]);
       priorities.shift(priorities[0]);
@@ -14,7 +14,7 @@ function solution(priorities, location) {
       }
     } else {
       priorities.shift(priorities[0]);
-      answer = answer + 1;
+      answer += 1;
 
       if (target_index === 0) {
         break;
@@ -26,3 +26,5 @@ function solution(priorities, location) {
 
   return answer;
 }
+
+// input : [2,1,3,2]
