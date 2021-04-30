@@ -1,5 +1,5 @@
-var fs = require("fs");
-var input = fs.readFileSync("/dev/stdin").toString().split("\n");
+let fs = require("fs");
+let input = fs.readFileSync("/dev/stdin").toString().split("\n");
 let strings = input.shift();
 let M = input.shift();
 
