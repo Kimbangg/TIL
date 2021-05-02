@@ -34,11 +34,14 @@ const input = (() => {
 })();
 
 let N = input();
+
 let cranes = input()
   .split(" ")
   .map((e) => +e)
   .sort((a, b) => b - a);
+
 let M = input();
+
 let boxes = input()
   .split(" ")
   .map((e) => +e)
