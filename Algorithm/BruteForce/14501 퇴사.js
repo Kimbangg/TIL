@@ -1,15 +1,25 @@
 function solution() {
-  for (let i = N - 1; i >= 0; i--) {}
+  for (let i = 0; i < N; i++) {
+    let time = TP[i][0];
+    let pay = TP[i][1];
+    let end = time + i;
+
+    if (end > N + 1) {
+      continue;
+    }
+
+    for (let j = end; j <= N; j++) {
+      dp[j] = Math.max(dp[i] + pay, dp[j]);
+    }
+  }
+  console.log(dp[N]);
 }
 
 const fs = require("fs");
 const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
-const N = Number(input[0]);
+const N = input.shift();
 let dp = new Array(N + 1).fill(0);
-
-const TP = Number(input[1])
-  .splice(1, N)
-  .map((e) => e.split(" "));
+const TP = input.map((tp) => tp.split(" ").map((e) => +e));
 
 solution();
