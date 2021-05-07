@@ -3,8 +3,7 @@ const input = require("fs")
   .toString()
   .split("\n")
   .map((x) =>
-    x
-      .split(" ")
+    x.split(" ")
       .map((x) => +x)
       .sort((a, b) => b - a)
   );
