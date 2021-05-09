@@ -14,4 +14,5 @@ for (let i = 0; i < N; i++) {
     result.push(list[i]);
   }
 }
+
 console.log(result.join(" "));
