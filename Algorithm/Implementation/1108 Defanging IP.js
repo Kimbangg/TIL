@@ -7,4 +7,7 @@ for (let i = 0; i < address.length; i++) {
   }
 }
 
-console.log(address.join(""));
+// split과 join을 통해 단순화
+var defangIPaddr = function (address) {
+  return address.split(".").join("[.]");
+};
