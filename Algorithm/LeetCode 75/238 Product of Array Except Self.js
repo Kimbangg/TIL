@@ -18,5 +18,3 @@ function solution(nums) {
 let nums = [1, 2, 3, 4];
 let result = solution(nums);
 console.log(result);
-
-// How to make time Complexity to O(n)
