@@ -1,14 +1,13 @@
 function solution(head) {
-  let slow = head;
-  let fase = head;
+  let walker = head;
+  let runner = head;
 
-  while (fast && fast.next) {
-    slow = slow.next;
-    fast = fast.next.next;
-    if (slow === fast) {
+  while (runner && runner.next) {
+    walker = walker.next;
+    runner = runner.next.next;
+    if (walker === runner) {
       return true;
     }
   }
-  return;
+  return false;
 }
-ㅋ;
