@@ -11,6 +11,8 @@
  * @return {ListNode}
  */
 var detectCycle = function (head) {
+  if (!head || !head.next) return null;
+
   let walker = head,
     runner = head;
 
@@ -19,13 +21,18 @@ var detectCycle = function (head) {
     runner = runner.next.next;
 
     if (walker === runner) {
-      walker = head;
-      while (walker !== runner) {
-        walker = walker.next;
-        runner = runner.next;
-      }
-      return `tail connect to node index ${walker}`;
+      break;
     }
   }
-  return `tail connect to nothing`;
+
+  if (walker !== runner) return null;
+
+  walker = head;
+
+  while (walker !== runner) {
+    walker = walker.next;
+    runner = runner.next;
+  }
+
+  return walker;
 };
