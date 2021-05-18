@@ -15,9 +15,9 @@ function solution(nums) {
 // set 함수를 이용한 문제풀이
 function solution(nums) {
   let maxCount = parseInt(nums.length / 2);
-  const arr = [...new Set(nums)];
+  const variety = [...new Set(nums)];
 
-  return arr.length <= maxCount ? arr.length : maxCount;
+  return variety.length <= maxCount ? variety.length : maxCount;
 }
 
 let nums = [3, 3, 3, 2, 2, 2];
