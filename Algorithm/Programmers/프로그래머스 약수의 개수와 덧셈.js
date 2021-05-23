@@ -13,3 +13,7 @@ function solution(left, right) {
 let left = 13;
 let right = 17;
 console.log(solution(left, right));
+
+let left = 13;
+let right = 17;
+console.log(solution(left, right));
