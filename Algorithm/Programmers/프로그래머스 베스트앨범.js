@@ -1,22 +1,20 @@
 function solution(genres, plays) {
   const answer = [];
-
   const songs = {};
   const playCount = {};
 
-  genres.forEach((genre, idx) => {
-    if (!songs[genre]) songs[genre] = [];
+  for (let i = 0; i < genres.length; i++) {
+    if (!songs[genres[i]]) songs[genres[i]] = [];
+
     const info = {
-      genre,
-      play: plays[idx],
-      index: idx,
+      genre: genres[i],
+      play: plays[i],
+      index: i,
     };
+    songs[genres[i]].push(info);
+    playCount[genres[i]] = (playCount[genres[i]] || 0) + plays[i];
+  }
 
-    songs[genre].push(info);
-    playCount[genre] = (playCount[genre] || 0) + plays[idx];
-  });
-
-  // 재생수 객체를 배열로 변환
   const playCountArr = [];
   for (let key in playCount) {
     playCountArr.push({
@@ -27,8 +25,8 @@ function solution(genres, plays) {
 
   playCountArr.sort((a, b) => b.count - a.count);
 
-  playCountArr.forEach((el) => {
-    const targetGenre = songs[el.genre];
+  playCountArr.forEach((ele) => {
+    const targetGenre = songs[ele.genre];
     targetGenre.sort((a, b) => b.play - a.play);
     targetGenre[0] && answer.push(targetGenre[0].index);
     targetGenre[1] && answer.push(targetGenre[1].index);
@@ -40,3 +38,6 @@ function solution(genres, plays) {
 let genres = ["classic", "pop", "classic", "classic", "pop"];
 let plays = [500, 600, 150, 800, 2500];
 console.log(solution(genres, plays));
+
+// 문제를 모두 이해 하였는가?
+// 장르 > 많이 > 고유 번호 작
