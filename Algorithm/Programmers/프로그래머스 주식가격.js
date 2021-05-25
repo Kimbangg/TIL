@@ -17,3 +17,5 @@ function solution(prices) {
 
 let prices = [1, 2, 3, 2, 3];
 console.log(solution(prices));
+
+// 그래서 효율을 더 올릴 수 있는 방법은 없을까 ?
