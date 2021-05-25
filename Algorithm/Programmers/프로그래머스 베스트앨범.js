@@ -38,6 +38,3 @@ function solution(genres, plays) {
 let genres = ["classic", "pop", "classic", "classic", "pop"];
 let plays = [500, 600, 150, 800, 2500];
 console.log(solution(genres, plays));
-
-// 문제를 모두 이해 하였는가?
-// 장르 > 많이 > 고유 번호 작
