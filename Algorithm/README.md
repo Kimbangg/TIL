@@ -1,14 +1,16 @@
-# BOJ
+# Problem Solving Resource 🗒
+
+## BOJ 
 
 1. [Covenant_Basic](https://covenant.tistory.com/234?category=727170)    
 2. [Covenant_Practice](https://covenant.tistory.com/224)    
 
 
-# Programmers
+## Programmers
 
 1. [고득점 Kit](https://programmers.co.kr/learn/challenges)        
 
-# LeetCode 
+## LeetCode 
 
 1. [EASY](https://leetcode.com/explore/interview/card/top-interview-questions-easy/)   
 2. [MEDIUM](https://leetcode.com/explore/interview/card/top-interview-questions-medium/)
