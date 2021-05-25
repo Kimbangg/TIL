@@ -1,8 +1,8 @@
 function solution(array, commands) {
   return commands.map((command) => {
-    const [start, end, target] = command;
+    const [start, end, target] = end;
     const newArray = array
-      .filter((value, fIndex) => fIndex >= start - 1 && fIndex <= end - 1)
+      .filter((value, index) => index >= start - 1 && index <= end - 1)
       .sort((a, b) => a - b);
 
     return newArray[target - 1];
