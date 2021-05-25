@@ -11,5 +11,5 @@ Covenant_Practice : https://covenant.tistory.com/224
 # LeetCode 
 
 EASY : https://leetcode.com/explore/interview/card/top-interview-questions-easy/   
-MEDIUM : https://leetcode.com/explore/interview/card/top-interview-questions-medium/
+MEDIUM : https://leetcode.com/explore/interview/card/top-interview-questions-medium/     
 HARD : https://leetcode.com/explore/interview/card/top-interview-questions-hard/
