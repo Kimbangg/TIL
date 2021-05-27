@@ -1,7 +1,9 @@
 function solution(nums) {
-  nums = new Set(nums);
+  for (let i = nums.length - 1; i > 0; i--) {
+    if (nums[i] === nums[i - 1]) nums.splice(i, 1);
+  }
 
-  return nums.size;
+  return nums.length;
 }
 
 let nums = [1, 1, 2];
