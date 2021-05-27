@@ -1,51 +1,73 @@
-var Node = function (value) {
-  var node = {};
-  node.value = value;
-  node.next = null;
-
-  return node;
-};
-
-const LinkedList = function () {
-  const list = {};
-  this.head = null;
-  this.tail = null;
-
-  list.addTail = function (value) {
-    let node = new Node(value);
-
-    // 만약 데이터가 비어있으면, 새로운 node가 head이자 tail이 된다.
-    if (!this.head) {
-      this.head = node;
-      this.head = tail;
-    }
-    // 만약 데이터가 있으면, 끝의 다음자리에 배치 시키고 새로운 tail(=끝)이 된다.
-    else {
-      this.tail.next = node;
-      this.tail = node;
-    }
-  };
-
-  list.removeHead = function () {
-    let removeNode = this.head;
-
-    if (TimeRanges.head !== null) {
-      this.head = removeNode.next;
-      return removeNode.value;
-    }
-  };
-
-  list.contains = function (target) {
-    let accNode = this.head;
-
-    while (accNode) {
-      if (accNode.value === target) {
-        return true;
+var LinkedList = (function () {
+  function LinkedList() {
+    this.length = 0;
+    this.head = null;
+  }
+  function Node(data) {
+    this.data = data;
+    this.next = null;
+  }
+  LinkedList.prototype.add = function (value) {
+    var node = new Node(value);
+    var current = this.head;
+    if (!current) {
+      // 현재 아무 노드도 없으면
+      this.head = node; // head에 새 노드를 추가합니다.
+      this.length++;
+      return node;
+    } else {
+      // 이미 노드가 있으면
+      while (current.next) {
+        // 마지막 노드를 찾고.
+        current = current.next;
       }
-      accNode = accNode.next;
+      current.next = node; // 마지막 위치에 노드를 추가합니다.
+      this.length++;
+      return node;
     }
-    return false;
+  };
+  LinkedList.prototype.search = function (position) {
+    var current = this.head;
+    var count = 0;
+    while (count < position) {
+      current = current.next;
+      count++;
+    }
+    return current.data;
   };
 
-  return list;
-};
+  LinkedList.prototype.remove = function (position) {
+    var current = this.head;
+    var before;
+    var remove;
+    var count = 0;
+    if (position == 0) {
+      remove = this.head;
+      this.head = this.head.next;
+      this.length--;
+      return remove;
+    } else {
+      while (count < position) {
+        before = current;
+        count++;
+        current = current.next;
+      }
+      remove = current;
+      before.next = remove.next;
+      this.length--;
+      return remove;
+    }
+  };
+  return LinkedList;
+})();
+
+var list = new LinkedList();
+list.add(1);
+list.add(2);
+list.add(3);
+list.length; // 3
+list.search(0); // 1
+list.search(2); // 3
+list.remove(1);
+list.length; //
+console.log(list);

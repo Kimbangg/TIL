@@ -1,30 +1,36 @@
-class Queue {
-  constructor() {
-    this.dataStore = [];
+var Queue = (function () {
+  function Queue() {
+    this.count = 0;
+    this.head = null;
+    this.rear = null;
   }
-  enqueue(elem) {
-    this.dataStore.push(elem);
+  function Node(data) {
+    this.data = data;
+    this.next = null;
   }
-  dequeue() {
-    console.log(this.dataStore.shift());
-    return this.dataStore.shift();
-  }
-  front() {
-    return this.dataStore[0];
-  }
-  back() {
-    return this.dataStore[this.dataStore.length - 1];
-  }
-  empty() {
-    if (this.dataStore.length == 0) {
-      return true;
+  Queue.prototype.enqueue = function (data) {
+    var node = new Node(data);
+    if (!this.head) {
+      this.head = node;
     } else {
+      this.rear.next = node;
+    }
+    this.rear = node;
+    return ++this.count;
+  };
+  Queue.prototype.dequeue = function () {
+    if (!this.head) {
+      // stack underflow 방지
       return false;
     }
-  }
-}
-
-const q = new Queue();
-q.enqueue(1);
-q.dequeue();
-console.log(q.empty());
+    var data = this.head.data;
+    this.head = this.head.next;
+    // this.head 메모리 클린
+    --this.count;
+    return data;
+  };
+  Queue.prototype.front = function () {
+    return this.head && this.head.data;
+  };
+  return Queue;
+})();
