@@ -1,3 +1,4 @@
+// Do you Know Binary Search?
 function solution(n) {
   return function (n) {
     let left = 1;
