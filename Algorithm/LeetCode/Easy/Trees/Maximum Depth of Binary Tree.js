@@ -1,23 +1,12 @@
 function solution(root) {
-  let tree = [{ node: root, depth: 1 }];
+  return searchDepth(root, 0);
+}
 
-  let current = tree.pop();
-  let max = 0;
+function searchDepth(root, level) {
+  if (!root) return level;
 
-  while (current && current.node) {
-    let node = current.node;
-
-    if (node.left) {
-      tree.push({ node: node.left, depth: current.depth + 1 });
-    }
-    if (node.right) {
-      tree.push({ node: node.right, depth: current.depth + 1 });
-    }
-
-    if (current.depth > max) {
-      max = current.depth;
-    }
-    current = tree.pop();
-  }
-  return max;
+  return Math.max(
+    searchDepth(root.left, level + 1),
+    searchDepth(root.right, level + 1)
+  );
 }
