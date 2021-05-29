@@ -2,6 +2,7 @@ const Heap = function Heap() {
   this.heap = Array(30).fill("");
   this.heapSize = 0;
 };
+///
 
 Heap.prototype.insertHeap = function (data) {
   const heap = this.heap;
