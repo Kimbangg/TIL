@@ -4,7 +4,7 @@
 
 1. [Covenant_Basic](https://covenant.tistory.com/234?category=727170)    
 2. [Covenant_Practice](https://covenant.tistory.com/224)    
-
+3. [Soo](https://www.acmicpc.net/workbook/by/soo7652)
 
 ## Programmers
 
