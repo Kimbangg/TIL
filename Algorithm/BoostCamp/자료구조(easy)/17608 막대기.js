@@ -1,6 +1,6 @@
 function solve() {
   const answer = [];
-  let max = stack[stack.length - 1];
+  let max = tack[stack.length - 1];
   answer.push(stack.pop());
 
   for (let i = stack.length - 1; i >= 0; i--) {

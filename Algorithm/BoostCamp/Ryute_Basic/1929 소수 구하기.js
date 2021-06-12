@@ -11,6 +11,7 @@ function isPrime(n) {
 
   return true;
 }
+
 function solution(N, M) {
   const primeArr = [];
 
