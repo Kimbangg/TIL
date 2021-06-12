@@ -48,5 +48,3 @@ function solve() {
 // local input
 let liquid = [-2, 4, -99, -1, 98];
 solve();
-
-// 더 좋은 코드를 짤 수 있을까?
