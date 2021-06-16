@@ -6,7 +6,7 @@ function dfs(idx, cnt) {
 
   for (let i = idx; i < N; i++) {
     output.push(i + 1);
-    dfs(i, output.length);
+    dfs(i, cnt + 1);
     output.pop();
   }
 }
