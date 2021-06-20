@@ -59,3 +59,6 @@ const n = 3;
 const people_count = 9;
 const recommends = [2, 1, 4, 3, 5, 6, 2, 7, 2];
 solve();
+
+// 내가 준 문제를 구현 할 수 있는지 ?!
+// 적절한 자료구조 사용 할 수 있는지 ?!
