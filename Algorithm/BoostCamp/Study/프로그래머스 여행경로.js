@@ -21,3 +21,33 @@ function solution(tickets) {
   dfs("ICN", 0, ["ICN"]);
   return answer;
 }
+
+////
+
+// let visited;
+
+// function dfs(idx, tickets, answer) {
+//   visited[idx] = 1;
+//   answer.push(tickets[idx][1]);
+
+//   for (let i = 0; i < tickets.length; i++) {
+//     if (tickets[idx][1] === tickets[i][0] && !visited[i]) {
+//       dfs(i, tickets, answer);
+//     }
+//   }
+// }
+
+// function solution(tickets) {
+//   tickets.sort();
+
+//   const answer = ["ICN"];
+//   visited = Array(tickets.length).fill(0);
+
+//   for (let i = 0; i < tickets.length; i++) {
+//     if (tickets[i][0] === "ICN" && !visited[i]) {
+//       dfs(i, tickets, answer);
+//     }
+//   }
+
+//   return answer;
+// }
