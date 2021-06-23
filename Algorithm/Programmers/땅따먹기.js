@@ -1,7 +1,7 @@
 function solution(land) {
     var answer = 0;
     
-    for( let i = land.length-2; i >= 0; i-- ) {
+    for( let i = land.length - 2; i >= 0; i-- ) {
         
         land[i][0] = Math.max( land[i+1][1], land[i+1][2], land[i+1][3] ) + land[i][0];
         
