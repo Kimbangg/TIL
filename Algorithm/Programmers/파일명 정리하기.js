@@ -26,19 +26,37 @@ function solution(files) {
 }
 
 
-      const headerA = a.value[0].toLowerCase();
-      const headerB = b.value[0].toLowerCase();
-      
-      if ( headerA < headerB ) return -1;
-      else if ( headerA > headerB ) return 1;
-      
-      const numberA = pasreInt(a.value[1]);
-      const numberB = parseInt(b.value[1]);
-      
-      if ( numberA < numberB ) return -1;
-      else if ( numberA > numberB ) return 1;
+    // 현실적인 답 ===================================================
+
+function solution(files) {
+  let answer = [];
+  const reg = /(\d+)/g; 
     
-      else {
-          if ( a.index < b.index ) return -1;
-          else return 1;
-      }
+  for (let i = 0; i < files.length; i++) {
+    answer.push({ index: i, value: files[i].split(reg) }); 
+  }
+
+  answer.sort((a, b) => {
+
+    const headerA = a.value[0].toLowerCase();
+    const headerB = b.value[0].toLowerCase();
+      
+    if ( headerA < headerB ) return -1;
+    else if ( headerA > headerB ) return 1;
+      
+    const numberA = parseInt(a.value[1]);
+    const numberB = parseInt(b.value[1]);
+      
+    if ( numberA < numberB ) return -1;
+    else if ( numberA > numberB ) return 1;
+    
+    else {
+      if ( a.index < b.index ) return -1;
+      else return 1;
+    }
+
+  });
+    
+  return answer.map((each) => each.value.join(""));
+  
+}
