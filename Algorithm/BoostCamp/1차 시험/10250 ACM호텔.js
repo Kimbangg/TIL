@@ -9,6 +9,7 @@ function solution() {
     return -1;
   }
 
+  // 층으로 손님의 순서를 나누면, 각 번호가 몇번 꽉찼는지 알 수 있다.
   let choosedRoom = String(Math.ceil(target / height));
   let choosedFloor = String(target - height * Math.floor(target / height));
 
