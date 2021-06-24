@@ -1,6 +1,11 @@
 function solution(month, days) {
   let start = 1;
 
+  if (month === 1 && days === 1) {
+    console.log("MONTH");
+    return;
+  }
+
   for (let i = 1; i < month; i++) {
     if (i === 2) {
       continue;
