@@ -9,7 +9,7 @@ function solution() {
         stack.push(1);
       } else {
         if (stack.length >= 2) {
-          horizon_count += 1;
+          ㅌhorizon_count += 1;
           break;
         }
         stack = [];
