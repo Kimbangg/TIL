@@ -16,7 +16,6 @@ function solution(skill, skill_trees) {
   // }
 
   for (let i = 0; i < skill_trees.length; i++) {
-    // let tmpStr = "";
     tmpStr = skill_trees[i]
       .split("")
       .filter((ele) => newArr.includes(ele))
