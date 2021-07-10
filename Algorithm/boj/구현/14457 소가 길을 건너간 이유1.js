@@ -13,6 +13,7 @@ function solution() {
         map[cow] = location;
       }
     }
+    
   }
   return count;
 }
