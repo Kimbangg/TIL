@@ -4,15 +4,6 @@
 
 [https://kimbangg.tistory.com/261](https://kimbangg.tistory.com/261)
 
-[
-
-\[ Network \] 라우팅 알고리즘 ( 라우터 & Link State 편 )
-
-1\. 라우터(Router) 란? Router는 1) 최적의 길을 찾아주는 Path Determine 과 2) 패킷을 전송하는 Switching 이렇게 2가지의 기능을 수행합니다. 우리가 여기서 다룰 내용은 최적의 길을 찾는 방법인 라우팅 프
-
-kimbangg.tistory.com
-
-](https://kimbangg.tistory.com/261)
 
 ## **링크상태 알고리즘 ( Link-State-Algorithm )**
 
@@ -83,12 +74,10 @@ DIJKSTRA(G,w,s) <- w는 비용, s는 시작점을 의미합니다.
 
 [https://blog.naver.com/ndb796/221234424646](https://blog.naver.com/ndb796/221234424646)
 
-[
+
 
 23\. 다익스트라(Dijkstra) 알고리즘
 
 다익스트라(Dijkstra) 알고리즘은 다이나믹 프로그래밍을 활용한 대표적인 최단 경로(Shortest Path) 탐...
 
-blog.naver.com
-
-](https://blog.naver.com/ndb796/221234424646)
+https://blog.naver.com/ndb796/221234424646
