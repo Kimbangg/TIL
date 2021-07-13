@@ -4,15 +4,6 @@
 
 [https://kimbangg.tistory.com/261](https://kimbangg.tistory.com/261)
 
-[
-
-\[ Network \] 라우팅 알고리즘 ( 라우터 & Link State 편 )
-
-1\. 라우터(Router) 란? Router는 1) 최적의 길을 찾아주는 Path Determine 과 2) 패킷을 전송하는 Switching 이렇게 2가지의 기능을 수행합니다. 우리가 여기서 다룰 내용은 최적의 길을 찾는 방법인 라우팅 프
-
-kimbangg.tistory.com
-
-](https://kimbangg.tistory.com/261)
 
 ## **링크상태 알고리즘 ( Link-State-Algorithm )**
 
