@@ -74,12 +74,10 @@ DIJKSTRA(G,w,s) <- w는 비용, s는 시작점을 의미합니다.
 
 [https://blog.naver.com/ndb796/221234424646](https://blog.naver.com/ndb796/221234424646)
 
-[
+
 
 23\. 다익스트라(Dijkstra) 알고리즘
 
 다익스트라(Dijkstra) 알고리즘은 다이나믹 프로그래밍을 활용한 대표적인 최단 경로(Shortest Path) 탐...
 
-blog.naver.com
-
-](https://blog.naver.com/ndb796/221234424646)
+https://blog.naver.com/ndb796/221234424646
