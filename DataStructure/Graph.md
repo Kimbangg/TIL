@@ -19,7 +19,7 @@
 
 [##_Image|kage@c3JnlW/btqZ0sc7d3a/uqvF6oAbfebuOpmiDhGv0K/img.png|alignLeft|data-filename="스크린샷 2021-03-14 오후 7.13.49.png" data-origin-width="692" data-origin-height="612" width="360" height="NaN" data-ke-mobilestyle="widthContent"|||_##]
 
-**3****.Grpah의 표현방식**
+**3\*\***.Grpah의 표현방식\*\*
 
 **1 인접 행렬**
 
