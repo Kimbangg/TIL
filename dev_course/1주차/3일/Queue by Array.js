@@ -5,14 +5,15 @@ class Queue {
     this.rear = 0;
   }
 
-  enqueue(value) {
+  push(value) {
     this.queue[this.rear++] = value;
   }
 
-  dequeue() {
+  shift() {
     const value = this.queue[this.front];
     delete this.queue[this.front];
     this.front += 1;
+
     return value;
   }
 
@@ -26,12 +27,12 @@ class Queue {
 }
 
 const queue = new Queue();
-queue.enqueue(1);
-queue.enqueue(2);
-queue.enqueue(4);
-console.log(queue.dequeue());
-queue.enqueue(8);
+queue.push(1);
+queue.push(2);
+queue.push(4);
+console.log(queue.shift());
+queue.push(8);
 console.log(queue.size());
 console.log(queue.peek());
-console.log(queue.dequeue());
-console.log(queue.dequeue());
+console.log(queue.shift());
+console.log(queue.shift());
