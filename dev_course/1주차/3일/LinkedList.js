@@ -1,6 +1,4 @@
-// 링크드 리스트
-// 삽입과 삭제는 상수 시간(1)이 걸린다. ( 추가를 위한 탐색이 없도록 만드는 것이 중요)
-// 찾기 로직은 선형 시간(N)이 걸린다
+// 전체 코드
 
 class Node {
   constructor(value) {
@@ -12,6 +10,7 @@ class Node {
 class SingleLinkedList {
   // Linked List 에서는 head & taill 에 대한 정보 만을 저장한다.
   constructor() {
+    this.length = 0;
     this.head = null;
     this.tail = null;
   }
@@ -41,6 +40,7 @@ class SingleLinkedList {
       this.tail.next = newNode;
       this.tail = newNode;
     }
+    this.length += 1;
   }
 
   // 탐색을 방지 하기 위해서, 삽입 하고자 하는 위치를 Parameter로 전달
@@ -48,6 +48,8 @@ class SingleLinkedList {
     const newNode = new Node(newValue);
     newNode.next = node.next;
     node.next = newNode;
+
+    this.length += 1;
   }
 
   //
@@ -61,6 +63,8 @@ class SingleLinkedList {
     if (prevNode.next !== null) {
       prevNode.next = prevNode.next.next;
     }
+
+    this.length -= 1;
   }
 
   display() {
@@ -76,6 +80,10 @@ class SingleLinkedList {
     displayString += "]";
     console.log(displayString);
   }
+
+  size() {
+    return this.length;
+  }
 }
 
 const linkedList = new SingleLinkedList();
@@ -89,3 +97,4 @@ linkedList.find(3);
 linkedList.remove(3);
 linkedList.insert(linkedList.find(2), 10);
 linkedList.display();
+console.log(linkedList.size());
