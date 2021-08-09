@@ -25,28 +25,32 @@ class Tree {
     while (stack.length > 0) {
       let poped = stack.pop();
       console.log(poped.val);
-      if (poped.rightNode) stack.push(poped.rightNode);
-      if (poped.leftNode) stack.push(poped.leftNode);
+      if (poped.rightNode) {
+        stack.push(poped.rightNode);
+      }
+      if (poped.leftNode) {
+        stack.push(poped.leftNode);
+      }
     }
   }
 
   // 중위순회 [ left -> root -> right]
-  InOrderTree(node) {
+  inOrderTree(node) {
     if (node === null) {
       return;
     }
 
-    let cur_node = node;
+    let currentNode = node;
     const stack = [];
 
     while (true) {
-      if (cur_node !== null) {
-        stack.push(cur_node);
-        cur_node = cur_node.leftNode;
+      if (currentNode !== null) {
+        stack.push(currentNode);
+        currentNode = currentNode.leftNode;
       } else if (stack.length > 0) {
-        cur_node = stack.pop();
-        console.log(cur_node.val);
-        cur_node = cur_node.rightNode;
+        currentNode = stack.pop();
+        console.log(currentNode.val);
+        currentNode = currentNode.rightNode;
       } else {
         break;
       }
@@ -58,18 +62,18 @@ class Tree {
     if (node == null) {
       return;
     }
-    let crnt_node = node;
+    let currentNode = node;
     let stack = [];
     let last_visit_node = null;
 
     while (true) {
-      if (crnt_node != null) {
-        stack.push(crnt_node);
-        crnt_node = crnt_node.left;
+      if (currentNode != null) {
+        stack.push(currentNode);
+        currentNode = currentNode.left;
       } else if (stack.length > 0) {
         peek_node = stack[stack.length - 1];
         if (peek_node.right != null && last_visit_node != peek_node.right) {
-          crnt_node = peek_node.right;
+          currentNode = peek_node.right;
         } else {
           console.log(peek_node.val);
           last_visit_node = stack.pop();

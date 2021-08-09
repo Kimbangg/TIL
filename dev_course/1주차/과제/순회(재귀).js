@@ -5,14 +5,6 @@ class Tree {
     this.rightNode = null;
   }
 
-  getVal() {
-    return this.val;
-  }
-
-  setVal(val) {
-    this.val = val;
-  }
-
   setLeftNode(node) {
     this.leftNode = node;
   }
@@ -22,14 +14,16 @@ class Tree {
   }
 
   // 중위순회 [ left -> root -> right]
-  InOrderTree(node) {
+  inOrderTree(node) {
     if (!node) {
       return;
     }
 
-    this.InOrderTree(node.leftNode);
-    console.log(node.val);
-    this.InOrderTree(node.rightNode);
+    return [
+      ...this.inOrderTree(node.leftNode),
+      node.val,
+      ...this.inOrderTree(node.rightNode),
+    ];
   }
 
   // 전위순회 [ root -> left -> right]
@@ -37,10 +31,11 @@ class Tree {
     if (!node) {
       return;
     }
-
-    console.log(node.val);
-    this.preOrderTree(node.leftNode);
-    this.preOrderTree(node.rightNode);
+    return [
+      node.val,
+      ...this.inOrderTree(node.leftNode),
+      ...this.inOrderTree(node.rightNode),
+    ];
   }
 
   // 후위순회 [ left -> right -> root ]
@@ -48,14 +43,15 @@ class Tree {
     if (!node) {
       return;
     }
-
-    this.postOrderTree(node.leftNode);
-    this.postOrderTree(node.rightNode);
-    console.log(node.val);
+    return [
+      ...this.inOrderTree(node.leftNode),
+      ...this.inOrderTree(node.rightNode),
+      node.val,
+    ];
   }
 }
 
-let root = new Tree("A");
+const root = new Tree("A");
 let node = new Tree("B");
 root.setLeftNode(node);
 
@@ -75,7 +71,7 @@ node = new Tree("G");
 root.rightNode.setRightNode(node);
 
 // 중위 순회 left -> root -> right
-root.InOrderTree(root);
+root.inOrderTree(root);
 console.log();
 
 // 전위 순회 root -> left sub -> right sub
