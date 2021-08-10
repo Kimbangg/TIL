@@ -71,12 +71,10 @@ node = new Tree("G");
 root.rightNode.setRightNode(node);
 
 // 중위 순회 left -> root -> right
-root.inOrderTree(root);
-console.log();
+console.log(root.inOrderTree(root));
 
 // 전위 순회 root -> left sub -> right sub
-root.preOrderTree(root);
-console.log();
+console.log(root.preOrderTree(root));
 
 // 후위 순회 왼쪽 -> 오른쪽 -> root
-root.postOrderTree(root);
+console.log(root.postOrderTree(root));
