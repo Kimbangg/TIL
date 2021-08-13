@@ -67,12 +67,12 @@ console.log(
 
 // 중복 제거
 
-const total_price = pipe(
+const totalPrice = pipe(
   map((p) => p.price),
   reduce(add)
 );
 
-const base_total_price = (predi) =>
+const baseTotalPrice = (predi) =>
   pipe(
     filter((p) => p.price >= 20000),
     total_price
