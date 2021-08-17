@@ -26,6 +26,11 @@ console.log(filter((n) => n % 2, [1, 2, 3, 4]));
 const nums = [1, 2, 3, 4, 5];
 
 const reduce = (f, acc, iter) => {
+  if (!iter) {
+    iter = acc[Symbol.iterator]();
+    acc = iter.next().value;
+  }
+
   for (const a of iter) {
     acc = f(acc, a);
   }
@@ -34,4 +39,5 @@ const reduce = (f, acc, iter) => {
 
 const add = (a, b) => a + b;
 
-console.log(reduce(add, 0, [1, 2, 3, 4, 5]));
+console.log(reduce(add, 0, nums));
+console.log(reduce(add, [1, 2, 3, 4, 5]));
