@@ -1,4 +1,4 @@
-function TodoForm({ $target, onSumbit }) {
+export default function TodoForm({ $target, onSumbit }) {
   const $form = document.createElement("form");
 
   $target.appendChild($form);

@@ -1,7 +1,7 @@
-function Header({ $target, text }) {
+export default function Header({ $target, text }) {
   const $header = document.createElement("h1");
 
-  $target.append($header);
+  console.log($target);
 
   this.render = () => {
     $header.textContent = text;
