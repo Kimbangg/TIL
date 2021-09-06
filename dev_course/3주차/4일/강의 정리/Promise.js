@@ -134,7 +134,7 @@ const todos = promiseRequest(`${API_ENDPOINT}/todos`)
     Promise.race(promises).then(mesaage => console.log(message))
 
 
- // 4. promise.allSetteld ( 모든 결과가 끝날 때까지 대기. )
+ // 4. promise.allSetteld ( 모든 결과가 끝날 때까까지 기다리되, 성공/실패 여부와 상관없이 출력)
 
 
     function getRandomInt(min ,max) {
