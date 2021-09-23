@@ -12,6 +12,8 @@ def solution(nums):
         result[i] *= tmp
         tmp *= nums[i]
 
+    return result
+
 
 nums = [1, 2, 3, 4]
 solution(nums)
